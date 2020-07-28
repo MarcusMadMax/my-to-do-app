@@ -5,7 +5,8 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.tasks = [
+    this.state = {
+      tasks: [
       {
         id: 1,
         text: 'Save the planet',
@@ -18,7 +19,7 @@ class App extends Component {
         id: 3,
         text: 'Get rid of corporations'
       },
-    ]
+    ]}
   }
 
   render() {
@@ -34,7 +35,7 @@ class App extends Component {
               <i className="fas fa-plus-circle"></i>
             </div>
             {
-              this.tasks.map(function (note) {
+              this.state.tasks.map(function (note) {
                 return (
                   <div className="task" key={note.id} >
                     <input type="checkbox" id="task" name="task" />
