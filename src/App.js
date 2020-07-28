@@ -9,7 +9,6 @@ class App extends Component {
       {
         id: 1,
         text: 'Save the planet',
-        dueDate: '22-09-2020',
       },
       {
         id: 2,
@@ -40,7 +39,8 @@ class App extends Component {
                   <div className="task" key={note.id} >
                     <input type="checkbox" id="task" name="task" />
                     <label htmlFor="task">{note.text}</label>
-                    <p>{note.dueDate}</p>
+                    <i class="fas fa-edit"></i>
+                    <i id="trash" class="fas fa-trash-alt"></i>
                   </div>
                 )
               })
