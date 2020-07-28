@@ -98,6 +98,10 @@ body {
         background: none;
         color: #313131;
         cursor: pointer;
+
+        &:focus{
+          outline: none;
+        }
       }
     }
 

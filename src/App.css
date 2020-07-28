@@ -116,6 +116,10 @@ body {
   cursor: pointer;
 }
 
+.wrap .tasks .new-task button:focus {
+  outline: none;
+}
+
 .wrap .tasks .task {
   display: -webkit-box;
   display: -ms-flexbox;
