@@ -7,19 +7,37 @@ class App extends Component {
 
     this.state = {
       tasks: [
-      {
-        id: 1,
-        text: 'Save the planet',
-      },
-      {
-        id: 2,
-        text: 'Plant a tree'
-      },
-      {
-        id: 3,
-        text: 'Get rid of corporations'
-      },
-    ]}
+      ],
+      tasksInputValue: '',
+    }
+  }
+
+  handletoDoInputChange = (e) => {
+    this.setState({ tasksInputValue: e.target.value })
+  }
+
+  handleAddToDoClick = (e) => {
+    var task = {
+      id: Date.now(),
+      text: this.state.tasksInputValue
+    }
+
+    var newNotes = [task, ...this.state.tasks]
+
+    this.setState({
+      tasks: newNotes,
+      tasksInputValue: ''//clears input field
+    })
+
+  }
+
+  handleDelete = (e) => {
+    var taskToDelete = parseInt(e.target.id)
+    var tasks = this.state.tasks
+    var filteredTasks = tasks.filter((item)=>{
+      return item.id !== taskToDelete
+    })
+    this.setState({tasks:filteredTasks})
   }
 
   render() {
@@ -31,17 +49,18 @@ class App extends Component {
         <main>
           <div className="tasks">
             <div className="task new-task">
-              <input type="text" id="add" name="add" placeholder="Add to do" />
-              <i className="fas fa-plus-circle"></i>
+              <label htmlFor="add"></label>
+              <input type="text" id="add" name="add" placeholder="Add to do" value={this.state.tasksInputValue} onChange={this.handletoDoInputChange} required/>
+              <button type="submit"><i className="fas fa-plus-circle" onClick={this.handleAddToDoClick}></i></button>
             </div>
             {
-              this.state.tasks.map(function (note) {
+              this.state.tasks.map((task) => {
                 return (
-                  <div className="task" key={note.id} >
+                  <div className="task" key={task.id} >
                     <input type="checkbox" id="task" name="task" />
-                    <label htmlFor="task">{note.text}</label>
-                    <i class="fas fa-edit"></i>
-                    <i id="trash" class="fas fa-trash-alt"></i>
+                    <label htmlFor="task" key={task.id}>{task.text}</label>
+                    <i className="fas fa-edit"></i>
+                    <i  className="fas fa-trash-alt" id={task.id} onClick={this.handleDelete}></i>
                   </div>
                 )
               })

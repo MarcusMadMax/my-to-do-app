@@ -76,35 +76,40 @@ body {
   position: relative;
   background: transparent;
   border-bottom: 1px dotted #313131;
+  padding: 0 0 0 1em;
 }
 
-.wrap .tasks .new-task :focus {
+.wrap .tasks .new-task input > select, .wrap .tasks .new-task input textarea {
+  background-color: red;
+}
+
+.wrap .tasks .new-task input:focus {
   outline: none;
 }
 
-.wrap .tasks .new-task [type='text'] {
+.wrap .tasks .new-task input[type='text'] {
   font-size: 1.5em;
   color: #313131;
   font-family: 'Rowdies', cursive;
 }
 
-.wrap .tasks .new-task :focus::-webkit-input-placeholder {
+.wrap .tasks .new-task input:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-.wrap .tasks .new-task :focus:-ms-input-placeholder {
+.wrap .tasks .new-task input:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-.wrap .tasks .new-task :focus::-ms-input-placeholder {
+.wrap .tasks .new-task input:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-.wrap .tasks .new-task :focus::placeholder {
+.wrap .tasks .new-task input:focus::placeholder {
   color: transparent;
 }
 
-.wrap .tasks .new-task i {
+.wrap .tasks .new-task button {
   font-size: 1.5em;
   background: none;
   color: #313131;

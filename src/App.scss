@@ -70,23 +70,30 @@ body {
         position: relative;
         background: transparent;
         border-bottom: 1px dotted #313131;
-      }
+        padding: 0 0 0 1em;
+      
 
-      :focus {
-        outline: none;
-      }
+        >select, textarea{
+          background-color: red;
+        }
 
-      [type='text'] {
-        font-size: 1.5em;
-        color: #313131;
-        font-family: 'Rowdies', cursive;
-      }
+        &:focus {
+          outline: none;
+        }
 
-      :focus::placeholder {
-        color: transparent;
-      }
+        &[type='text'] {
+          font-size: 1.5em;
+          color: #313131;
+          font-family: 'Rowdies', cursive;
+        }
 
-      i {
+        &:focus::placeholder {
+          color: transparent;
+        }
+
+    }
+
+      button {
         font-size: 1.5em;
         background: none;
         color: #313131;
