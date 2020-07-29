@@ -57,8 +57,8 @@ class App extends Component {
               this.state.tasks.map((task) => {
                 return (
                   <div className="task" key={task.id} >
-                    <input type="checkbox" id="task" name="task" />
-                    <label htmlFor="task" key={task.id}>{task.text}</label>
+                    <input type="checkbox" id={task.id} name="task" />
+                    <label htmlFor={task.id}>{task.text}</label>
                     <i className="fas fa-edit"></i>
                     <i  className="fas fa-trash-alt" id={task.id} onClick={this.handleDelete}></i>
                   </div>
