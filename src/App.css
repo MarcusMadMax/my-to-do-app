@@ -79,10 +79,6 @@ body {
   padding: 0 0 0 1em;
 }
 
-.wrap .tasks .new-task input > select, .wrap .tasks .new-task input textarea {
-  background-color: red;
-}
-
 .wrap .tasks .new-task input:focus {
   outline: none;
 }
@@ -110,14 +106,32 @@ body {
 }
 
 .wrap .tasks .new-task button {
-  font-size: 1.5em;
   background: none;
-  color: #313131;
-  cursor: pointer;
 }
 
 .wrap .tasks .new-task button:focus {
   outline: none;
+}
+
+.wrap .tasks .new-task button ::after {
+  position: absolute;
+  content: '';
+  top: .05em;
+  left: 2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 1px 1px 10px black;
+          box-shadow: inset 1px 1px 10px black;
+}
+
+.wrap .tasks .new-task .fa-plus-circle {
+  position: relative;
+  background: transparent;
+  font-size: 2.5em;
+  color: wheat;
+  cursor: pointer;
+  text-shadow: 1px 1px 5px black;
 }
 
 .wrap .tasks .task {

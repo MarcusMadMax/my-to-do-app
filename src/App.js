@@ -26,7 +26,7 @@ class App extends Component {
 
     this.setState({
       tasks: newNotes,
-      tasksInputValue: ''//clears input field
+      tasksInputValue: ''
     })
 
   }

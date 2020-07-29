@@ -71,11 +71,6 @@ body {
         background: transparent;
         border-bottom: 1px dotted #313131;
         padding: 0 0 0 1em;
-      
-
-        >select, textarea{
-          background-color: red;
-        }
 
         &:focus {
           outline: none;
@@ -91,17 +86,34 @@ body {
           color: transparent;
         }
 
-    }
+      }
 
-      button {
-        font-size: 1.5em;
+      button{
         background: none;
-        color: #313131;
-        cursor: pointer;
 
         &:focus{
           outline: none;
         }
+
+        ::after{
+          position: absolute;
+          content: '';
+          top: .05em;
+          left: 2em;
+          width: 1em;
+          height: 1em;
+          border-radius: 50%;
+          box-shadow: inset 1px 1px 10px black;
+        }
+      }
+
+      .fa-plus-circle {
+        position: relative;
+        background: transparent;
+        font-size: 2.5em;
+        color: wheat;
+        cursor: pointer;
+        text-shadow: 1px 1px 5px black;
       }
     }
 
@@ -125,6 +137,7 @@ body {
         height: 2.5em;
         cursor: pointer;
       }
+
       input[type='checkbox'] + label {
         color: #313131;
         font-weight: 300;
